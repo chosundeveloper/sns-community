@@ -13,20 +13,27 @@ export default function RootLayout({
 }) {
   return (
     <html lang="ko">
-      <body>
-        <header className="bg-blue-600 text-white p-4">
-          <div className="container mx-auto">
-            <h1 className="text-2xl font-bold">
-              <a href="/">SNS 커뮤니티</a>
-            </h1>
+      <body className="bg-gray-50">
+        <header className="bg-white border-b border-gray-200 shadow-sm sticky top-0 z-50">
+          <div className="max-w-7xl mx-auto px-4 py-3">
+            <div className="flex items-center justify-between">
+              <a href="/" className="flex items-center gap-2">
+                <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg"></div>
+                <h1 className="text-xl font-bold text-gray-900">디시 커뮤니티</h1>
+              </a>
+              <nav className="flex gap-4 text-sm">
+                <a href="/" className="text-gray-600 hover:text-gray-900 font-medium">갤러리</a>
+                <a href="#" className="text-gray-600 hover:text-gray-900 font-medium">인기글</a>
+              </nav>
+            </div>
           </div>
         </header>
-        <main className="container mx-auto p-4">
+        <main className="max-w-7xl mx-auto px-4 py-6 min-h-screen">
           {children}
         </main>
-        <footer className="bg-gray-800 text-white p-4 mt-8">
-          <div className="container mx-auto text-center">
-            <p>&copy; 2025 SNS 커뮤니티. All rights reserved.</p>
+        <footer className="bg-white border-t border-gray-200 py-8 mt-12">
+          <div className="max-w-7xl mx-auto px-4 text-center text-sm text-gray-500">
+            <p>&copy; 2025 디시 커뮤니티. All rights reserved.</p>
           </div>
         </footer>
       </body>
