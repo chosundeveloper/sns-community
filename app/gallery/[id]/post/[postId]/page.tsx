@@ -4,6 +4,7 @@ import { useState } from 'react'
 import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { posts, comments, galleries } from '@/data/mockData'
+import LiveChat from '@/components/LiveChat'
 
 export default function PostDetailPage() {
   const params = useParams()
@@ -151,6 +152,9 @@ export default function PostDetailPage() {
           </button>
         </form>
       </div>
+
+      {/* 실시간 채팅 */}
+      <LiveChat galleryId={id} galleryName={gallery.name} />
     </div>
   )
 }

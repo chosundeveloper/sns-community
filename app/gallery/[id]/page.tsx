@@ -1,12 +1,13 @@
+'use client'
+
 import Link from 'next/link'
+import { useParams } from 'next/navigation'
 import { galleries, posts } from '@/data/mockData'
+import LiveChat from '@/components/LiveChat'
 
-interface PageProps {
-  params: Promise<{ id: string }>
-}
-
-export default async function GalleryPage({ params }: PageProps) {
-  const { id } = await params
+export default function GalleryPage() {
+  const params = useParams()
+  const id = params.id as string
   const gallery = galleries.find((g) => g.id === id)
   const galleryPosts = posts.filter((p) => p.galleryId === id)
 
@@ -99,6 +100,9 @@ export default async function GalleryPage({ params }: PageProps) {
           </tbody>
         </table>
       </div>
+
+      {/* 실시간 채팅 */}
+      <LiveChat galleryId={id} galleryName={gallery.name} />
     </div>
   )
 }
